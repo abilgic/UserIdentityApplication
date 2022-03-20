@@ -45,12 +45,16 @@
             </div>
             <div class="form-group">
                 <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
+                @Html.DropDownListFor(model => model.City, (IEnumerable
+                <SelectListItem>)ViewData["Cities"],null, new { @class = "form-control" })
+                @*<input asp-for="City" class="form-control" />*@
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Town" class="control-label"></label>
-                <input asp-for="Town" class="form-control" />
+                @Html.DropDownListFor(model => model.Town, (IEnumerable
+                <SelectListItem>)ViewData["Towns"],null, new { @class = "form-control" })
+                @*<input asp-for="Town" class="form-control" />*@
                 <span asp-validation-for="Town" class="text-danger"></span>
             </div>
             <div class="form-group">

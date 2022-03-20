@@ -39,6 +39,14 @@ namespace UserIdentityBAL.Services
 
             return userlist.ToList();
         }
+        public async Task<List<User>> GetUserList()
+        {
+
+            var userlist = await GetAll();
+
+
+            return userlist.ToList();
+        }
 
         public async Task<int> DeleteUser(int Id)
         {
@@ -64,14 +72,11 @@ namespace UserIdentityBAL.Services
             return useritem;
         }
 
-        public async Task<int> UpdateUser(User usermodel)
+        public async Task<int> UpdateUser(User user)
         {
             try
             {
-                var useritem = await GetById(usermodel.Id);
-
-
-                var result = await UpdateAsync(useritem);
+                var result = await UpdateAsync(user);
                 return result;
 
             }

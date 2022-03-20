@@ -5,9 +5,9 @@ namespace UserIdentityUI.Models
     {
         public UserValidator()
         {
-            RuleFor(x => x.Id).Null();
-            RuleFor(x => x.FirstName).NotEmpty().MinimumLength(8).MaximumLength(8);
-            RuleFor(x => x.LastName).NotEmpty().MinimumLength(8).MaximumLength(8);
+            
+            RuleFor(x => x.FirstName).NotEmpty().MinimumLength(3).MaximumLength(8);
+            RuleFor(x => x.LastName).NotEmpty().MinimumLength(3).MaximumLength(8);
             RuleFor(x => x.BirthDate).NotNull();
             RuleFor(x => x.Gender).NotEmpty().MinimumLength(4).MaximumLength(5);
             RuleFor(x => x.Age).NotEmpty().InclusiveBetween(15, 50);
